@@ -1,0 +1,17 @@
+"D:\ToolBoxs2\IAR\arm\bin\armproc.dll" 
+
+"D:\ToolBoxs2\IAR\arm\bin\armJET.dll" 
+
+"D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\Release\Exe\c.out" 
+
+--plugin="D:\ToolBoxs2\IAR\arm\bin\armbat.dll" 
+
+--device_macro="D:\ToolBoxs2\IAR\arm\config\debugger\NXP\Kxx.dmac" 
+
+--device_macro="D:\ToolBoxs2\IAR\arm\config\debugger\NXP\K6x_Trace.dmac" 
+
+--flash_loader="D:\ToolBoxs2\IAR\arm\config\flashloader\NXP\FlashK65Fxxx256K.board" 
+
+
+
+
