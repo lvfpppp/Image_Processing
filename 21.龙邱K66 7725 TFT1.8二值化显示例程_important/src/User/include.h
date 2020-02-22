@@ -55,6 +55,7 @@
 
 #include "toushi.h"  /*透视头文件*/
 
+
 /* 在OLED 上显示或者在TFT1.8显示 */
 //#define LQ_OLED     
 #define LQ_TFT1_8       

@@ -1,33 +1,33 @@
-"D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\User\LQ_SYSTICK.c"
+"D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\User\LQ_SYSTICK.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\User
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\User
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\User
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\User
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Libs
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Libs
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Startup
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Startup
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Linker
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Linker
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Drive
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Drive
 -I
 D:\ToolBoxs2\IAR\arm\inc
 -I
 D:\ToolBoxs2\IAR\arm\inc\c
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\User
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\User
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Libs
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Libs
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Startup
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Startup
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Project_Setting\Linker
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Project_Setting\Linker
 -I
-D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\src\Drive
+D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\src\Drive
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=127
 -D__CHAR_MIN__=(-__CHAR_MAX__-1)

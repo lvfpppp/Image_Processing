@@ -15,8 +15,8 @@
 【SYS PLL】 528MHz
 【USB PLL】 480MHz
 龙邱LCD1.8模块使用说明： 电源使用3.3V。   
-QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ*/
-
+QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ*/          //x是宽、向右，y是行、向下，//不同于正常xoy坐标系和图像坐标系（记得是y向右，x向下）
+                                                                            //可能下面注释还有没改过来的
 #include "include.h"
 #include "LQ_SGP18T.h"
 #include "picture.h"
@@ -25,7 +25,7 @@ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ*/
 #define TFTSPI_SDA    PTC14_OUT    //SDI  
 #define TFTSPI_DC     PTC13_OUT    //DC   
 #define TFTSPI_RST    PTC12_OUT    //RST  
-
+extern uint8 compress_cut[LCDH][LCDW];
 /**********************************************************
 函数名称：TFTSPI_init()
 入口参数： 0:横屏  1：竖屏
@@ -291,12 +291,12 @@ void TFTSPI_CLS(uint16_t color)
 
 /**********************************************************
 函数名称：TFTSPI_Draw_part()，和TFTSPI_Fill_Area一样
-入口参数：起始、终止横坐标(0-127)，纵坐标(0-159),显示颜色uint16
+入口参数：起始、终止横坐标(0-159)，纵坐标(0-127),显示颜色uint16
 出口参数：无
 时间：2012-09-09
 功能说明：填充矩形区域
-其他说明：0<=xs<xe<=127
-0<=ys<ye<=159
+其他说明：0<=xs<xe<=159
+0<=ys<ye<=127
 **********************************************************/
 void TFTSPI_Draw_Part(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t color_dat)
 {
@@ -321,12 +321,12 @@ void TFTSPI_Draw_Part(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t color
 
 /**********************************************************
 函数名称：TFTSPI_Draw_rectangle()
-入口参数：起始、终止横坐标(0-127)，纵坐标(0-159),显示颜色uint16
+入口参数：起始、终止横坐标(0-159)，纵坐标(0-127),显示颜色uint16
 出口参数：无
 时间：2012-09-09
 功能说明：画矩形边框
-其他说明：0<=xs<xe<=127,函数矩形边框分别包含xs,xe,ys,ye行和列，即边框分别是xs,xe,ys,ye行/列
-0<=ys<ye<=159
+其他说明：0<=xs<xe<=159,函数矩形边框分别包含xs,xe,ys,ye行和列，即边框分别是xs,xe,ys,ye行/列
+0<=ys<ye<=127
 **********************************************************/
 void TFTSPI_Draw_Rectangle(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t color_dat)
 {
@@ -342,8 +342,8 @@ void TFTSPI_Draw_Rectangle(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t 
 出口参数：无
 时间：2012-09-09
 功能说明：画圆形边框(仅支持屏幕内画圆)
-其他说明：0<=x<=127
-0<=y<=159
+其他说明：0<=x<=159
+0<=y<=127
 **********************************************************/
 void TFTSPI_Draw_Circle(uint8_t x,uint8_t y,uint8_t r,uint16_t color_dat)
 {
@@ -370,12 +370,12 @@ void TFTSPI_Draw_Circle(uint8_t x,uint8_t y,uint8_t r,uint16_t color_dat)
 
 /**********************************************************
 函数名称：TFTSPI_Draw_line()
-入口参数：起始、终止横坐标(0-127)，纵坐标(0-159),显示颜色uint16
+入口参数：起始、终止横坐标(0-159)，纵坐标(0-127),显示颜色uint16
 出口参数：无
 时间：2012-09-09
 功能说明：画直线,和画矩形不同，画的是粗为1的斜线
-其他说明：0<=xs<xe<=127
-0<=ys<ye<=159
+其他说明：0<=xs<xe<=159
+0<=ys<ye<=127
 **********************************************************/
 void TFTSPI_Draw_Line(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t color_dat)
 {
@@ -439,12 +439,12 @@ void TFTSPI_Draw_Line(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint16_t color
 
 /**********************************************************
 函数名称：TFTSPI_Draw_Dot()
-入口参数：起始横坐标(0-127)，纵坐标(0-159),显示颜色uint16
+入口参数：起始横坐标(0-159)，纵坐标(0-127),显示颜色uint16
 出口参数：无
 时间：2012-09-09
 功能说明：画点
-其他说明：0<=x<=127
-0<=y<=159
+其他说明：0<=x<=159
+0<=y<=127
 **********************************************************/
 void TFTSPI_Draw_Dot(uint8_t x,uint8_t y,uint16_t color_dat)
 {
@@ -1206,7 +1206,7 @@ void TFTSPI_Show_Pic1(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint8_t *ppic)
 }
 
 /****************显示图片（从单片机的DATA区）********************************/	//水平扫描，高位在前，不包含图像头数据，16位真彩色
-void TFTSPI_Show_ALLscreen(uint8_t *pic)//显示整屏幕图片
+void TFTSPI_Show_ALLscreen(uint8_t *pic)//显示整屏幕图片，一般不用
 {
   unsigned int i,j,k=0;
   
@@ -1237,13 +1237,30 @@ void TFTSPI_Show_ALLscreen(uint8_t *pic)//显示整屏幕图片
   }    
 }
 /****************显示图片（从单片机的DATA区）********************************/	
-void TFTSPI_Show_Pic2(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,const uint8_t *ppic) 
+void TFTSPI_Show_Pic2(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,const uint8_t *ppic) //这里xs是宽，ys是高（横屏），对原来上面写错了
 {
     unsigned int i;	
     TFTSPI_Set_Pos(xs,ys,xs+w-1,ys+h);
     for(i=0;i<w*h;i++)
     { 			
         TFTSPI_Write_Word((ppic[2*i]<<8)+(ppic[2*i+1])); //高位在前，且两个数据组合成一个16位数据表示像素值  
+    }
+}
+//灰度显示
+void TFTSPI_Show_Pic_huidu(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h, uint8_t *ppic) //这里xs是宽，ys是高（横屏），对原来上面写错了
+{	
+    uint16_t color;
+    unsigned int i;	
+    TFTSPI_Set_Pos(xs,ys,xs+w-1,ys+h);
+    for(i=0;i<w*h;i++)
+    {       
+            color = 0;
+            color=((ppic[i]>>3))<<11;
+            color=color|(((ppic[i]>>2))<<5);
+            color=color|(((ppic[i])>>3));
+            TFTSPI_Write_Word(color);
+        
+        
     }
 }
 //
@@ -1268,28 +1285,14 @@ void TFTSPI_Test(void)
 { 
   TFTSPI_Init(0);        //LCD初始化  0:横屏  1：竖屏
   TFTSPI_CLS(u16WHITE);   //蓝色屏幕	
-  //TFTSPI_Show_Logo(0,37);//显示龙邱LOG  
-  //TFTSPI_P16x16Str(0,0,"北京龙邱智能科技",u16RED,u16BLUE);		//字符串显示
-  //TFTSPI_P8X16Str(0,1,"Long Qiu i.s.t.",u16WHITE,u16BLACK);		//字符串显示 
-//char txt[32];
-  //u16 count = 1;
- /*while(1)
-  {srand(count);
-    ColumnarSetting(0,0,100,100,u16BLACK,u16BLUE);
-DrawSpectrum();
-TFTSPI_Draw_Line(0,101,10,101,u16RED);
-TFTSPI_Draw_Line(11,102,20,102,u16RED);
-      ///sprintf(txt, "variate:%5.2f", count);                    //将变量填充到字符串的对应位置，并将字符串存放到txt[]中
-      //TFTSPI_P8X16Str(0, 6, txt, u16RED, u16BLUE);              //将txt中 内容显示出来
-      ///delayms(300);
-     count++; if(count>60000) count=0;   
-   }*/
   
-  for(int i=1;i<=5;i++)
-  {
-  TFTSPI_Show(i);
-  delayms(5000);
-  TFTSPI_CLS(u16WHITE);
-  }
+    TouShi(gImage_3);
+   TFTSPI_Show_Pic_huidu(0,0,160,120,compress_cut[0]);
+//  for(int i=1;i<=5;i++)
+//  {
+//  TFTSPI_Show(i);
+//  delayms(5000);
+//  TFTSPI_CLS(u16WHITE);
+//  }
   
 }//TEST()

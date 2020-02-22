@@ -98,7 +98,7 @@
     <Jet>
         <PrevWtdReset>System</PrevWtdReset>
         <OnlineReset>Software</OnlineReset>
-        <JetConnSerialNo>CMSIS-DAP:0227000024404e45002b000cffff0043ffffffff97969900</JetConnSerialNo>
+        <JetConnSerialNo>DAPLink CMSIS-DAP:0227000024404e45002b000cffff0043ffffffff97969900</JetConnSerialNo>
         <JetConnFoundProbes />
         <DisableInterrupts>0</DisableInterrupts>
         <LeaveRunning>0</LeaveRunning>
@@ -111,8 +111,8 @@
     <SWOManager>
         <SamplingDivider>8192</SamplingDivider>
         <OverrideClock>0</OverrideClock>
-        <CpuClock>1</CpuClock>
-        <SwoClock>858337596</SwoClock>
+        <CpuClock>50987022</CpuClock>
+        <SwoClock>885</SwoClock>
         <DataLogMode>0</DataLogMode>
         <ItmPortsEnabled>63</ItmPortsEnabled>
         <ItmTermIOPorts>1</ItmTermIOPorts>

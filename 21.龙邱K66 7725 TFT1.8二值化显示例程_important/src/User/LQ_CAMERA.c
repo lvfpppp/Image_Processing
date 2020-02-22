@@ -13,6 +13,7 @@
 #include "include.h"
 #include "LQ_OV7725.h"
 
+
 uint8_t Image_Data[IMAGEH][IMAGEW];      //图像原始数据存放
 uint8_t Image_Use[LCDH][LCDW];           //压缩后之后用于存放屏幕显示数据
 uint8_t Image_filter[LCDH][LCDW];        //储存滤波后的数据

@@ -66,6 +66,7 @@ extern void TFTSPI_P16x12Str(uint8_t x,uint8_t y,uint8_t *s_dat,uint16_t word_co
 extern void TFTSPI_Show_Pic1(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint8_t *ppic);
 extern void TFTSPI_Show_Pic2(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,const uint8_t *ppic) ;
 extern void TFTSPI_Show_ALLscreen(uint8_t *pic);
+extern void TFTSPI_Show_Pic_huidu(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h, uint8_t *ppic) ;
 extern void TFTSPI_Show_Line(uint8_t xs,uint8_t ys,uint16_t color);
 extern void TFTSPI_Show(uint8_t picture);
 extern void TFTSPI_Test(void);
