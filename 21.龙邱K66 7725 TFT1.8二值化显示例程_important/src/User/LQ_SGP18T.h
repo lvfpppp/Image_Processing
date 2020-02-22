@@ -24,9 +24,11 @@ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ*/
 #define APP_LCD_WIDTH  LCD_WIDTH//液晶屏宽度
 #define APP_LCD_HEIGHT LCD_HEIGHT//液晶屏高度
 
-#define TFT18W        162
-#define TFT18H        132
-
+#define TFT18W        159      //0<=x<=159填满一行
+//160*128一帧=40KB(RGB565)                     
+#define TFT18H        127      //0<=y<=127，（0能显示但cls（u16BLUE）函数不会显示，第一行只是黑色,不是显示黑色）（且cls(0<=y<=129)才能清除干净）      
+//132与162应该是包含边框的//162*132一帧=41.77KB//大点没事，小了就不行
+                         //函数里面用160*128是因为8（一个字节）的倍数
 #define	u16RED		0xf800
 #define	u16GREEN	0x07e0
 #define	u16BLUE		0x001f
@@ -61,14 +63,15 @@ extern void TFTSPI_P8X8Str(uint8_t x, uint8_t y, char *s_dat,uint16_t word_color
 extern void TFTSPI_P8X8NUM(uint8_t x, uint8_t y, uint16_t num, uint8_t num_bit,uint16_t word_color,uint16_t back_color);
 extern void TFTSPI_P16x16Str(uint8_t x,uint8_t y,uint8_t *s_dat,uint16_t word_color,uint16_t back_color);
 extern void TFTSPI_P16x12Str(uint8_t x,uint8_t y,uint8_t *s_dat,uint16_t word_color,uint16_t back_color);
-extern void TFTSPI_Show_Pic(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint8_t *ppic);
+extern void TFTSPI_Show_Pic1(uint8_t xs,uint8_t ys,uint8_t xe,uint8_t ye,uint8_t *ppic);
 extern void TFTSPI_Show_Pic2(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,const uint8_t *ppic) ;
-extern void TFTSPI_Show_Battery_Icon(void);
-extern void TFTSPI_Show_Title(void);
-extern void TFTSPI_Show_Logo(uint8_t xs,uint8_t ys);
+extern void TFTSPI_Show_ALLscreen(uint8_t *pic);
+extern void TFTSPI_Show_Line(uint8_t xs,uint8_t ys,uint16_t color);
+extern void TFTSPI_Show(uint8_t picture);
 extern void TFTSPI_Test(void);
 extern void ColumnarSetting(uint8_t x,uint8_t y, uint8_t w,uint8_t h,uint16_t fclolr,uint16_t bcolor);
 extern void DrawingColumnar(uint8_t t,uint8_t duty,uint8_t cl);
 extern void DrawSpectrum(void);
 extern void Clear_Columnar(void);
+
 #endif /*SGP18T_ILI9163B.h*/

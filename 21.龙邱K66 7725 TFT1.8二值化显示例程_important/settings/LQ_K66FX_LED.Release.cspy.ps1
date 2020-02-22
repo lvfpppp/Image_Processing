@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "D:\ToolBoxs2\IAR\common\bin\cspybat" -f "D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\settings\LQ_K66FX_LED.Release.general.xcl" --backend -f "D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\settings\LQ_K66FX_LED.Release.driver.xcl" 
+& "D:\ToolBoxs2\IAR\common\bin\cspybat" -f "D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\settings\LQ_K66FX_LED.Release.general.xcl" --backend -f "D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\settings\LQ_K66FX_LED.Release.driver.xcl" 
 }
 else
 {
-& "D:\ToolBoxs2\IAR\common\bin\cspybat" -f "D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\settings\LQ_K66FX_LED.Release.general.xcl" --debug_file=$debugfile --backend -f "D:\wenjian\3.龙邱K66F系列核心板例程\21.龙邱K66 7725 TFT1.8二值化显示例程_look\settings\LQ_K66FX_LED.Release.driver.xcl" 
+& "D:\ToolBoxs2\IAR\common\bin\cspybat" -f "D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\settings\LQ_K66FX_LED.Release.general.xcl" --debug_file=$debugfile --backend -f "D:\github\Image_Processing\21.龙邱K66 7725 TFT1.8二值化显示例程_important\settings\LQ_K66FX_LED.Release.driver.xcl" 
 }
