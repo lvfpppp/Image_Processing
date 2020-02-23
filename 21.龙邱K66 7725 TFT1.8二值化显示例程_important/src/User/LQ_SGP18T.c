@@ -25,7 +25,7 @@ QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ*/          //x是
 #define TFTSPI_SDA    PTC14_OUT    //SDI  
 #define TFTSPI_DC     PTC13_OUT    //DC   
 #define TFTSPI_RST    PTC12_OUT    //RST  
-extern uint8 compress_cut[LCDH][LCDW];
+extern uint8 toushi[TS_H][TS_W];
 /**********************************************************
 函数名称：TFTSPI_init()
 入口参数： 0:横屏  1：竖屏
@@ -1263,7 +1263,7 @@ void TFTSPI_Show_Pic_huidu(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h, uint8_t *p
         
     }
 }
-//
+
 //void TFTSPI_Show(uint8_t picture)//显示图片,picture未移植
 //{
 //  switch(picture)
@@ -1285,9 +1285,10 @@ void TFTSPI_Test(void)
 { 
   TFTSPI_Init(0);        //LCD初始化  0:横屏  1：竖屏
   TFTSPI_CLS(u16WHITE);   //蓝色屏幕	
-  
-    TouShi(gImage_3);
-   TFTSPI_Show_Pic_huidu(0,0,160,120,compress_cut[0]);
+  TFTSPI_Show_Pic_huidu(0,0,160,127,gImage_34[0]);
+  delayms(1000);
+    TouShi(gImage_34);
+   TFTSPI_Show_Pic_huidu(0,0,78,128,toushi[0]);
 //  for(int i=1;i<=5;i++)
 //  {
 //  TFTSPI_Show(i);
