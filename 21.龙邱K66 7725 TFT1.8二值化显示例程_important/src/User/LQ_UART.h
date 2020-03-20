@@ -1,5 +1,7 @@
 #ifndef __LQ_UART_H
 #define __LQ_UART_H
+
+#define K_SUM 3
 /*------------------------------------------------------------------------------------------------------
 【函    数】Test_Uart
 【功    能】测试UART 
@@ -9,4 +11,6 @@
 【注意事项】
 --------------------------------------------------------------------------------------------------------*/
 void Test_Uart(void);
+void UART_PutImage(UART_Type * uratn, uint8_t *str);
+void UART_PutImageChar(UART_Type * uratn, uint8_t ch);
 #endif

@@ -1285,15 +1285,12 @@ void TFTSPI_Test(void)
 { 
   TFTSPI_Init(0);        //LCD³õÊ¼»¯  0:ºáÆÁ  1£ºÊúÆÁ
   TFTSPI_CLS(u16WHITE);   //À¶É«ÆÁÄ»	
-  TFTSPI_Show_Pic_huidu(0,0,160,127,gImage_34[0]);
-  delayms(1000);
-    TouShi(gImage_34);
-   TFTSPI_Show_Pic_huidu(0,0,78,128,toushi[0]);
-//  for(int i=1;i<=5;i++)
-//  {
-//  TFTSPI_Show(i);
-//  delayms(5000);
-//  TFTSPI_CLS(u16WHITE);
-//  }
+//TFTSPI_Show_Pic_huidu(0,0,160,127,gImage_34[0]);
+//  delayms(1000);
+//  TouShi(gImage_34);
+//  TFTSPI_Show_Pic_huidu(0,0,78,128,toushi[0]);
   
+   
+   
+
 }//TEST()

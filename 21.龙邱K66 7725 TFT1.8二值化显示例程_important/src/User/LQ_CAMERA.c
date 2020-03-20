@@ -69,6 +69,9 @@ void PORTD_IRQHandler(void)
 ----------------------------------------------------------------*/
 void Test_OV7725(void)
 {  
+  
+    //Test_Uart();//测试提取参数，并初始化UART4,可用先注释不影响下面调试
+    
     LED_Init();
     TFTSPI_Init(0);                //TFT1.8初始化  0：横屏显示  1：竖屏显示  
     TFTSPI_CLS(u16BLUE);           //清屏
@@ -98,18 +101,27 @@ void Test_OV7725(void)
     DMA_PORTx2BUFF_Init (DMA_CH4, (void *)&PTD_BYTE0_IN,(void*)Image_Data, PTD13, DMA_BYTE1, (IMAGEW ), DMA_rising_down); 
     /* 摄像头初始化结束 */
     
-     Gaussian_Init();
+    // Gaussian_Init();
     while(1)
     { 
         LED_Reverse(1);           //LED指示程序运行状态
         if(Field_Over_Flag)       //完成一场图像采集
         { 
             Get_Use_Image();      //从采集图像数据中取出自己想要使用的大小
-           Gaussian_filtering(LCDH,LCDW,Image_Use);
+            TFTSPI_Show_Cmera(0, 0, 160, 120, Image_Use);
+            //Gaussian_filtering(LCDH,LCDW,Image_Use);
             // Median_filtering(LCDH,LCDW,Image_Use,3);
-            TFTSPI_Show_Cmera(0, 0, 160, 120, Image_filter);      //二值化图像数据
-
-            Field_Over_Flag= 0;       
+            //TFTSPI_Show_Cmera(0, 0, 160, 120, Image_filter);      //二值化图像数据
+          
+          for (int i=0;i<2;i++)
+          {
+           for(int j=0;j<4;j++)
+           {
+            UART_PutImageChar(UART4,Image_Data[i][j]);  //显示写入后再读出的数据
+           }
+          }
+ 
+            //Field_Over_Flag= 0;       
         }    
     }
 }
@@ -117,7 +129,7 @@ void Test_OV7725(void)
 
 /*---------------------------------------------------------------
 【函    数】Get_Use_Image
-【功    能】获取需要使用的图像大小
+【功    能】获取需要使用的图像大小(裁剪)
 【参    数】无
 【返 回 值】无
 【注意事项】
