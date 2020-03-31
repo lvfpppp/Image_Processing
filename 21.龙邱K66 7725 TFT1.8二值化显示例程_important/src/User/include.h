@@ -54,7 +54,8 @@
 #include "ANO_DT.h"
 
 #include "toushi.h"  /*透视头文件*/
-
+#include "myfilter.h"/*滤波文件*/
+#include "myFollow.h"/*循迹文件*/
 
 /* 在OLED 上显示或者在TFT1.8显示 */
 //#define LQ_OLED     

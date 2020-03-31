@@ -1025,7 +1025,7 @@
                     <item>Gaussian_Temp</item>
                     <item>Image_filter</item>
                     <item>txt</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -1117,7 +1117,7 @@
                     <item>Image_Data</item>
                     <item>Image_Use</item>
                     <item>whalf</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
@@ -1150,7 +1150,7 @@
                     <item>sum</item>
                     <item>SIZE</item>
                     <item>txt</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

@@ -7,7 +7,6 @@
 #define LCDH    120  //OLED显示的行数
 #define LCDW    160  //OLED显示的列数
 
-#define SIZE 3//高斯滤波窗口大小
 
 #define MAX(a,b) (a>b)?a:b
 #define MIN(a,b) (a>b)?b:a  
@@ -66,16 +65,6 @@ void TFTSPI_Show_Cmera(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,uint8_t ppic[LC
 void Draw_Road(void);
 
 
-/*---------------------------------------------------------------
-【函    数】Pixle_Filter
-【功    能】过滤噪点
-【参    数】无
-【返 回 值】无
-【注意事项】
-----------------------------------------------------------------*/
-void Pixle_Filter(void);
-
-
 /***************************************************************
 * 
 * 函数名称：SendPicture 
@@ -122,9 +111,5 @@ uint8_t GetOSTU(uint8_t tmImage[LCDH][LCDW]);
 ***************************************************************/ 
 void sauvola(uint8_t grayImage[LCDH][LCDW],float k,int windowSize);
 
-void Median_filtering(int height,int width,uint8_t (*data)[LCDW],int windowsize);
 
-void Gaussian_filtering(int height,int width,uint8_t (*data)[LCDW]);
-
-void Gaussian_Init(void);
 #endif

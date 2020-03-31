@@ -2495,6 +2495,21 @@
                 <file>
                     <name>$PROJ_DIR$\src\User\LQ_OV7725.h</name>
                 </file>
+            </group>
+            <group>
+                <name>XunJi</name>
+                <file>
+                    <name>$PROJ_DIR$\src\User\myFilter.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\User\myFilter.h</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\User\myFollow.c</name>
+                </file>
+                <file>
+                    <name>$PROJ_DIR$\src\User\myFollow.h</name>
+                </file>
                 <file>
                     <name>$PROJ_DIR$\src\User\toushi.c</name>
                 </file>
