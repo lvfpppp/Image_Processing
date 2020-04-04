@@ -1246,7 +1246,8 @@ void TFTSPI_Show_Pic2(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h,const uint8_t *p
         TFTSPI_Write_Word((ppic[2*i]<<8)+(ppic[2*i+1])); //高位在前，且两个数据组合成一个16位数据表示像素值  
     }
 }
-//灰度显示
+/************************************/
+//灰度显示,范例：TFTSPI_Show_Pic_huidu(0,0,78,128,toushi[0]);toushi[TS_H][TS_W]二维数组的传输
 void TFTSPI_Show_Pic_huidu(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h, uint8_t *ppic) //这里xs是宽，ys是高（横屏），对原来上面写错了
 {	
     uint16_t color;
@@ -1283,8 +1284,20 @@ void TFTSPI_Show_Pic_huidu(uint8_t xs,uint8_t ys,uint8_t w,uint8_t h, uint8_t *p
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void TFTSPI_Test(void)
 { 
-  TFTSPI_Init(0);        //LCD初始化  0:横屏  1：竖屏
-  TFTSPI_CLS(u16WHITE);   //蓝色屏幕	
+//  TFTSPI_Init(0);        //LCD初始化  0:横屏  1：竖屏
+//  TFTSPI_CLS(u16WHITE);   //蓝色屏幕	
+//  LED_Init();
+//  UART_Init(UART4, 115200);
+//  
+//      TFTSPI_Show_Pic_huidu(0,0,70,51,saidao_1[0]);
+//      delayms(1000);
+      //int ab[2];
+//      myfollow(saidao_1,ab);//处理
+//      int A=*ab;
+//      int B=*(ab+1);
+    //TFTSPI_P8X16Str(0,6,ab);  
+      
+//测试透视代码块      
 //TFTSPI_Show_Pic_huidu(0,0,160,127,gImage_34[0]);
 //  delayms(1000);
 //  TouShi(gImage_34);

@@ -400,7 +400,7 @@ uint8_t GetOSTU(uint8_t tmImage[LCDH][LCDW]) //Image_Use为上面输入参数，数值大是
 
 /***************************************************************
 * 
-* 函数名称：sauvola
+* 函数名称：sauvola,失败的
 * 功能说明：用sauvola二值化算法对输入图像二值化
 * 参数说明：grayImage：输入需二值化的二维数组，k：修正参数，windowSize：窗口大小
 * 函数返回：void 
