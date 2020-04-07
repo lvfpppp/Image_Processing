@@ -10,9 +10,16 @@
 #define G_L 0xE0
 #define B_H 0x00 //蓝色
 #define B_L 0x1F
+#define Y_H 0xFF //黄色 
+#define Y_L 0xE0        
+#define P_H 0x78 //紫色
+#define P_L 0x0F
 
-#define PROSH 50//120//处理图像的高，宽
-#define PROSW 80//160
+#define PROSH 102//处理图像的高，宽
+#define PROSW 160
+
+#define TSD_d2 4//判断二阶差分是否是阶跃点的阈值，用在提取peak值，判断上拐点
+#define TSD_kind 6//配合none简单判断赛道类型的阈值
 
 void myfollow(uint8_t Img[PROSH][PROSW],float* AB);
 void myfollow_Test(void);

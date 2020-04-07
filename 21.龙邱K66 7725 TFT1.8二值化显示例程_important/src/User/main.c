@@ -69,9 +69,11 @@ void main(void)
     //Test_OV7725();
     //TFTSPI_Test();
      myfollow_Test();
+    
+//    extern uint8_t shizi_2[101][160];
 //      TFTSPI_Init(0);        //LCD³õÊ¼»¯  0:ºáÆÁ  1£ºÊúÆÁ
 //  TFTSPI_CLS(u16WHITE);   //°×É«ÆÁÄ»
-//  TFTSPI_Show_Pic_huidu(0,0,PROSW,PROSH,shizi[0]);
+//  TFTSPI_Show_Pic_huidu(0,0,PROSW,PROSH,shizi_2[0]);
 //     TFTSPI_P6X8Str(12,15,"fgaohd126",u16BLACK,u16WHITE);
 //     TFTSPI_P6X8Str(0,15,"fgaohd126",u16BLACK,u16WHITE);
 	
